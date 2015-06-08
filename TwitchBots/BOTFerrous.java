@@ -14,7 +14,8 @@ public class BOTFerrous extends PircBot
 		
 		try {
 			Class.forName("org.h2.Driver");
-			conn = DriverManager.getConnection("jdbc:h2:~/Documents/java se workspace/BOTFerrous/database",
+			String db_path = "your-db-path";
+			conn = DriverManager.getConnection("jdbc:h2" + db_path,
 					"BOTFerrous", "robutt");
 			Statement stmnt = conn.createStatement();
 			stmnt.execute("CREATE TABLE IF NOT EXISTS Users" +
